@@ -1,13 +1,11 @@
 import React from "react";
-import AboutBackground from "../Assets/about-background.png";
-import AboutBackgroundImage from "../Assets/about-background-image.png";
+import AboutBackgroundImage from "../Assets/about-backgroundImage.png";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 
 const About = () => {
   return (
     <div className="about-section-container">
       <div className="about-background-image-container">
-        <img src={AboutBackground} alt="" />
       </div>
       <div className="about-section-image-container">
         <img src={AboutBackgroundImage} alt="" />
@@ -15,15 +13,13 @@ const About = () => {
       <div className="about-section-text-container">
         <p className="primary-subheading">About</p>
         <h1 className="primary-heading">
-          Food Is An Important Part Of A Balanced Diet
+          Our trust is a registered public charitable trust formed with the following vission and aims.
         </h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+          To support needy and deserving in their pursuit of getting formal education or acquiring skills to get empowered and to contribute meaningfully to the betterment of the society.
         </p>
         <p className="primary-text">
-          Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-          facilisis at fringilla quam.
+          To help the underprivileged and needy to meet with their medical needs to the extent possible.
         </p>
         <div className="about-buttons-container">
           <button className="secondary-button">Learn More</button>

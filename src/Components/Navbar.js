@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll"; // import from react-scroll
 import Logo from "../Assets/Logo.png";
-import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -16,7 +15,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
-import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -24,30 +22,39 @@ const Navbar = () => {
   const menuOptions = [
     { text: "Home", icon: <HomeIcon />, to: "home" },
     { text: "About", icon: <InfoIcon />, to: "about" },
-    { text: "Testimonials", icon: <CommentRoundedIcon />, to: "testimonial" },
+    { text: "Trustees", icon: <CommentRoundedIcon />, to: "trustees" },
     { text: "Contact", icon: <PhoneRoundedIcon />, to: "contact" },
-    { text: "Cart", icon: <ShoppingCartRoundedIcon />, to: "cart" }, // Cart will work as a section here
   ];
+
+  const offsetValue = -70; // Adjust this value based on your header height
 
   return (
     <nav>
       {/* Logo */}
       <div className="nav-logo-container">
-        <Link to="home" smooth={true} duration={500}>
+        <Link to="home" smooth={true} duration={500} offset={offsetValue}>
           <img src={Logo} alt="Logo" />
         </Link>
       </div>
 
       {/* Desktop Navbar Links */}
       <div className="navbar-links-container">
-        <Link to="home" smooth={true} duration={500}>Home</Link>
-        <Link to="about" smooth={true} duration={500}>About</Link>
-        <Link to="testimonial" smooth={true} duration={500}>Testimonials</Link>
-        <Link to="contact" smooth={true} duration={500}>Contact</Link>
-        <Link to="cart" smooth={true} duration={500}>
-          <BsCart2 className="navbar-cart-icon" />
+        <Link to="home" smooth={true} duration={500} offset={offsetValue}>
+          Home
         </Link>
-        <button className="primary-button">Bookings Now</button>
+        <Link to="about" smooth={true} duration={500} offset={offsetValue}>
+          About
+        </Link>
+        <Link to="work" smooth={true} duration={500} offset={offsetValue}>
+          Work
+        </Link>
+        <Link to="trustees" smooth={true} duration={500} offset={offsetValue}>
+          Trustees
+        </Link>
+        <Link to="contact" smooth={true} duration={500} offset={offsetValue}>
+          Contact
+        </Link>
+        <button className="primary-button">Register Now</button>
       </div>
 
       {/* Mobile Hamburger Menu */}
@@ -66,7 +73,13 @@ const Navbar = () => {
           <List>
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton component={Link} to={item.to} smooth={true} duration={500}>
+                <ListItemButton
+                  component={Link}
+                  to={item.to}
+                  smooth={true}
+                  duration={500}
+                  offset={offsetValue}
+                >
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>
