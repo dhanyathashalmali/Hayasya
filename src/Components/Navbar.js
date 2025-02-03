@@ -11,19 +11,16 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
-import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
-import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
+
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const menuOptions = [
-    { text: "Home", icon: <HomeIcon />, to: "home" },
-    { text: "About", icon: <InfoIcon />, to: "about" },
-    { text: "Trustees", icon: <CommentRoundedIcon />, to: "trustees" },
-    { text: "Contact", icon: <PhoneRoundedIcon />, to: "contact" },
+    { text: "Home", to: "home" },
+    { text: "About", to: "about" },
+    {text: "Work", to: "work"},
+    { text: "Trustees", to: "trustees" }
   ];
 
   const offsetValue = -70; // Adjust this value based on your header height
@@ -39,22 +36,20 @@ const Navbar = () => {
 
       {/* Desktop Navbar Links */}
       <div className="navbar-links-container">
-        <Link to="home" smooth={true} duration={500} offset={offsetValue}>
-          Home
-        </Link>
-        <Link to="about" smooth={true} duration={500} offset={offsetValue}>
-          About
-        </Link>
-        <Link to="work" smooth={true} duration={500} offset={offsetValue}>
-          Work
-        </Link>
-        <Link to="trustees" smooth={true} duration={500} offset={offsetValue}>
-          Trustees
-        </Link>
-        <Link to="contact" smooth={true} duration={500} offset={offsetValue}>
-          Contact
-        </Link>
-        <button className="primary-button">Register Now</button>
+        {menuOptions.map((item) => (
+          <Link
+            key={item.text}
+            to={item.to}
+            smooth={true}
+            duration={500}
+            offset={offsetValue}
+          >
+            {item.text}
+          </Link>
+        ))}
+        <Link to="application-form" smooth={true} duration={500} offset={offsetValue}>
+    <button className="primary-button">Apply Now</button>
+  </Link>
       </div>
 
       {/* Mobile Hamburger Menu */}

@@ -57,6 +57,7 @@ nav {
   font-weight: 600;
   transition: 0.2s;
 }
+
 .navbar-cart-icon {
   font-size: 1.15rem;
 }
@@ -117,13 +118,13 @@ nav {
   align-items: center;
   justify-content: center;
 }
+
+
 .secondary-button svg {
   margin-left: 0.75rem;
   font-size: 1.5rem;
 }
-.secondary-button:hover {
-  background-color: #4b8aad;
-}
+
 .about-section-container {
   margin-top: 20rem;
   position: relative;
